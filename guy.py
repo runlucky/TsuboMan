@@ -1,6 +1,4 @@
-import pyxel
-
-class App:
+class Guy:
     def __init__(self):
         pyxel.init(160, 120, caption="TsuboMan")
         pyxel.load("assets/hoge.pyxel")
