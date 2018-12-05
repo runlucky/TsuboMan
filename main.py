@@ -1,14 +1,19 @@
+import os
+import inspect
 import pyxel
+import guy
 
 class App:
+
     def __init__(self):
         pyxel.init(160, 120, caption="TsuboMan")
-        pyxel.load("assets/hoge.pyxel")
 
         self.y = 100
         self.vy = 0.0
         self.x = 0
 
+        print(App.gravity)
+        pyxel.load(os.path.dirname(os.path.abspath(__file__)) + "/assets/hoge.pyxel")
         pyxel.run(self.update, self.draw)
 
     gravity = 0.3
