@@ -7,6 +7,7 @@ class App:
 
         self.y = 100
         self.vy = 0.0
+        self.x = 0
 
         pyxel.run(self.update, self.draw)
 
@@ -19,6 +20,13 @@ class App:
         if pyxel.btnp(pyxel.KEY_SPACE):
             self.vy = -5
 
+        if pyxel.btn(pyxel.KEY_RIGHT):
+            self.x += 1
+
+        if pyxel.btn(pyxel.KEY_LEFT):
+            self.x += -1
+
+
         self.y += self.vy
         self.vy += App.gravity
         self.vy = max(self.vy, -5)
@@ -29,7 +37,7 @@ class App:
     def draw(self):
         pyxel.cls(0)
         pyxel.text(0, 0, "abcedfg", 2)
-        pyxel.blt(0, self.y, 0, 0, 0, 16, 16, 0)
+        pyxel.blt(self.x, self.y, 0, 0, 0, 16, 16, 0)
 
 
 
