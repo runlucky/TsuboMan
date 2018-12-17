@@ -1,3 +1,4 @@
+import inspect, os
 class Guy:
     def __init__(self):
         self.y = 100
